@@ -21,4 +21,41 @@ let value = {
   bool1: false,
   null1: null,
 };
-React.render(<ObjectTree value={ value } />, document.getElementById('root'));
+
+class Root extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { value };
+  }
+
+  evaluateValue() {
+    const text = React.findDOMNode(this.refs.textarea).value;
+    try {
+      let value = JSON.parse(text);
+      this.setState({ value });
+    } catch(e) {
+      alert(e.message);
+    }
+  }
+
+  render() {
+    const json = JSON.stringify(this.state.value, null, 4);
+    return (
+      <div>
+        <p>
+          <textarea
+            ref='textarea'
+            style={ { width: '100%' } }
+            rows={ json.split(/\n/).length }
+            defaultValue={ json }
+          />
+          <br />
+          <button onClick={ this.evaluateValue.bind(this) }>Evaluate</button>
+        </p>
+        <ObjectTree value={ this.state.value } level={ 1 } />
+      </div>
+    );
+  }
+}
+
+React.render(<Root />, document.getElementById('root'));

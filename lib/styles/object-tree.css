@@ -1,0 +1,43 @@
+.object-tree .object-node .object-label {
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.object-tree .object-node .object-label .toggle-icon {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  font-size: 14px;
+  line-height: 12px;
+  text-align: center;
+  font-style: normal;
+  border: 1px dotted #aaa;
+}
+.object-tree .object-node .object-label .toggle-icon:before {
+  content: "+";
+}
+.object-tree .object-node .object-label .toggle-icon.opened:before {
+  content: "-";
+}
+.object-tree .object-node .object-label .object-type {
+  font-style: italic;
+}
+.object-tree .object-node table {
+  width: 100%;
+}
+.object-tree .object-node table tr {
+  vertical-align: top;
+}
+.object-tree .object-node table tr th.prop-name {
+  padding: 4px 8px;
+  text-align: left;
+  background-color: #eee;
+  color: #333;
+}
+.object-tree .object-node table tr td.prop-value {
+  padding: 4px 8px;
+  width: 100%;
+  border-top: 1px solid #aaa;
+}

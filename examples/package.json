@@ -1,0 +1,15 @@
+{
+  "name": "example",
+  "scripts": {
+    "prebuild": "npm install react-object-tree -S",
+    "build": "browserify -t babelify --debug -o main-bundle.js main.js"
+  },
+  "dependencies": {
+    "react": "^0.13.3",
+    "react-object-tree": "file:.."
+  },
+  "devDependencies": {
+    "babelify": "^6.2.0",
+    "browserify": "^11.0.1"
+  }
+}

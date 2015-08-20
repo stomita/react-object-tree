@@ -1,0 +1,49 @@
+.object-tree {
+  .object-node {
+    .object-label {
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      .toggle-icon {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        font-size: 14px;
+        line-height: 12px;
+        text-align: center;
+        font-style: normal;
+        border: 1px dotted #aaa;
+        &:before {
+          content: "+";
+        }
+        &.opened {
+          &:before {
+            content: "-";
+          }
+        }
+      }
+      .object-type {
+        font-style: italic;
+      }
+    }
+    table {
+      width: 100%;
+      tr {
+        vertical-align: top;
+        th.prop-name {
+          padding: 4px 8px;
+          text-align: left;
+          background-color: #eee;
+          color: #333;
+        }
+        td.prop-value {
+          padding: 4px 8px;
+          width: 100%;
+          border-top: 1px solid #aaa;
+        }
+      }
+    }
+  }
+}

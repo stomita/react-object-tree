@@ -47,20 +47,22 @@ class ObjectNode extends React.Component {
           <span className='object-type'>{ '(' + type + ')' }</span>
         </div>
         <table style={ { display: opened ? 'block' : 'none' } }>
-          { iter.map(({ prop, value }) => {
-              const cpath =
-                type === 'Array' ? `${path}[${prop}]` :
-                path ? `${path}.${prop}` :
-                prop;
-              return (
-                <tr>
-                  <th className='prop-name'>{ prop }</th>
-                  <td className='prop-value'>
-                    <ObjectNode value={ value } path={ cpath } level={ clevel } />
-                  </td>
-                </tr>
-              );
-          })}
+          <tbody>
+            { iter.map(({ prop, value }) => {
+                const cpath =
+                  type === 'Array' ? `${path}[${prop}]` :
+                  path ? `${path}.${prop}` :
+                  prop;
+                return (
+                  <tr key={ prop }>
+                    <th className='prop-name'>{ prop }</th>
+                    <td className='prop-value'>
+                      <ObjectNode value={ value } path={ cpath } level={ clevel } />
+                    </td>
+                  </tr>
+                );
+            })}
+          </tbody>
         </table>
       </div>
     );

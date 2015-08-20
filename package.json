@@ -1,6 +1,6 @@
 {
   "name": "react-object-tree",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Component to render JavaScript object value in collapsible tree",
   "main": "lib/scripts/index.js",
   "scripts": {

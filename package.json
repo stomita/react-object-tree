@@ -8,11 +8,19 @@
     "build:styles": "lessc src/styles/object-tree.less > lib/styles/object-tree.css",
     "build": "npm run build:scripts && npm run build:styles"
   },
+  "keyword": [
+    "react",
+    "react-component"
+  ],
   "files": [
     "lib"
   ],
   "author": "Shinichi Tomita <shinichi.tomita@gmail.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stomita/react-object-tree"
+  },
   "devDependencies": {
     "babel": "^5.8.21",
     "less": "^2.5.1"

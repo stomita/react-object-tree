@@ -39,7 +39,9 @@ class ObjectNode extends React.Component {
     let iter =
       type === 'Array' ?
       obj.map((v, i) => ({ prop: i, value: v })) :
-      Object.keys(obj).map((prop) => ({ prop, value: obj[prop] }));
+      Object.keys(obj).sort(function(a, b) {
+        return a.toLowerCase().localeCompare(b.toLowerCase());
+      }).map((prop) => ({ prop, value: obj[prop] }));
     return (
       <div className='object-node'>
         <div className='object-label' onClick={ this.toggleNode.bind(this) }>
